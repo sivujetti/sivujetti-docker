@@ -1,0 +1,8 @@
+.DS_Store
+.idea
+.vscode
+
+/to-outside-htdocs/*
+!/to-outside-htdocs/.gitkeep
+/to-htdocs/*
+!/to-htdocs/.gitkeep
