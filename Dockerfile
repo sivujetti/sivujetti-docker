@@ -1,11 +1,13 @@
-FROM alpine:3.17
+FROM alpine:3.18
 
-RUN apk add --no-cache nginx supervisor nano sqlite openssl php81 php81-fpm php81-mbstring php81-session php81-ctype php81-pdo php81-pdo_sqlite php81-openssl php81-sodium php81-fileinfo
+RUN apk add --no-cache nginx supervisor nano sqlite openssl php82 php82-fpm php82-mbstring php82-session php82-ctype php82-pdo php82-pdo_sqlite php82-openssl php82-sodium php82-fileinfo php82-zip php82-curl
+
+RUN ln -s /usr/bin/php82 /usr/bin/php
 
 COPY config/nginx.conf /etc/nginx/nginx.conf
 
-COPY config/fpm-pool.conf /etc/php81/php-fpm.d/www.conf
-COPY config/php.ini /etc/php81/conf.d/custom.ini
+COPY config/fpm-pool.conf /etc/php82/php-fpm.d/www.conf
+COPY config/php.ini /etc/php82/conf.d/custom.ini
 
 COPY config/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
 

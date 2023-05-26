@@ -2,3 +2,5 @@
 .gitignore
 README.md
 temp-patch.php
+/sivujetti-*/
+sivujetti-*.zip
